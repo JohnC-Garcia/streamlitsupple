@@ -13,7 +13,10 @@ class_names = ['cloudy', 'rain', 'shine', 'sunrise']
 def import_and_predict(image_data, model):
       size = (150, 150)
       image = ImageOps.fit(image_data, size, Image.LANCZOS)
+      image = image.convert("RGB")
       img = np.asarray(image)
+      if img.shape[-1] != 3:
+        raise ValueError("Expected image with 3 channels (RGB).")
       img_reshape = img[np.newaxis, ...] / 255.0
       prediction = model.predict(img_reshape)
       return prediction
