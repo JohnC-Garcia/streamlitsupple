@@ -12,7 +12,7 @@ class_names = ['cloudy', 'rain', 'shine', 'sunrise']
 
 def import_and_predict(image_data, model):
       size = (150, 150)
-      image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+      image = ImageOps.fit(image_data, size, Image.LANCZOS)
       img = np.asarray(image)
       img_reshape = img[np.newaxis, ...] / 255.0
       prediction = model.predict(img_reshape)
