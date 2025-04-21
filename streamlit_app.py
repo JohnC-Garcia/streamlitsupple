@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 st.title("Weather Image Classifier 🌦️")
 
 uploaded_file = st.file_uploader("Upload a weather image...", type=["jpg", "png", "jpeg"])
-model = load_model("weather_classifier.h5")
+model = load_model('weather_classifier.h5')
 
 class_names = ['cloudy', 'rain', 'shine', 'sunrise']
 
