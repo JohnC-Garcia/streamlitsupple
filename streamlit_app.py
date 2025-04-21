@@ -29,6 +29,6 @@ else:
     image = Image.open(file)
     st.image(image, use_column_width=True)
     prediction = import_and_predict(image, model)
-    class_names = ['cloudy', 'rain', 'shine', 'sunrise']
+    class_names = ['rain', 'cloudy', 'shine', 'sunrise']
     string = "OUTPUT : " + class_names[np.argmax(prediction)]
     st.success(string)
