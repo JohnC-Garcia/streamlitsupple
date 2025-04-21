@@ -1,13 +1,8 @@
 import streamlit as st
 import tensorflow as tf
 
-@st.cache(allow_output_mutation=True)
-
-def load_model():
-  model = load_model('weather_classifier.h5')
-  return model
-      
-model=load_model()
+@st.cache(allow_output_mutation=True)   
+model = load_model('weather_classifier.h5')
 st.write("""# Weather Detection System""")
 file=st.file_uploader("Choose weather photo from computer",type=["jpg","png"])
 
