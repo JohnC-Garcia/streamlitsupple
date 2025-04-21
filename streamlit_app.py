@@ -2,7 +2,6 @@ import streamlit as st
 import tensorflow as tf
 
 @st.cache(allow_output_mutation=True)
-st.title("Weather Image Classifier 🌦️")
 
 def load_model():
   model = load_model('weather_classifier.h5')
